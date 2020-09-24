@@ -1,6 +1,7 @@
 import React from 'react';
 import About from './AboutComponent';
 import Book from './BookingComponent';
+import Footer from './FooterComponent';
 import Header from './HeaderComponent';
 import Navigation from './NavigationComponent';
 import Popup from './PopupComponent';
@@ -19,6 +20,7 @@ const MainComponent = () => {
       <Stories />
       <Book />
       <Popup />
+      <Footer />
     </div>
   );
 };
