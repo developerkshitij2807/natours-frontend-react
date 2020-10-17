@@ -1,0 +1,46 @@
+.tour-page--heading {
+    &__picture {
+        background-size: cover;
+        height: 100rem;
+        // background-blend-mode: screen;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &-heading {
+            color: $color-white;
+            font-size: 5rem;
+            font-weight: 300;
+            width: 40rem;
+            text-transform: uppercase;
+            position: absolute;
+            top: 20rem;
+            text-align: center;
+            &--span {
+                padding: 2rem 1.5rem;
+                box-decoration-break: clone;
+                background-image: linear-gradient( to right bottom, rgba($color-primary-light, 0.85), rgba($color-primary-dark, 0.85));
+                -webkit-box-decoration-break: clone;
+            }
+        }
+        &-info {
+            position: absolute;
+            top: 40rem;
+            width: 25rem;
+            display: flex;
+            justify-content: space-between;
+            color: $color-white;
+            font-size: 2rem;
+            text-transform: uppercase;
+            h6 {
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.info__element--logo-heading {
+    fill: $color-white;
+}

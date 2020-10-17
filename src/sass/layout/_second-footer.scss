@@ -1,0 +1,35 @@
+.second-footer {
+    background-color: $color-grey-light-1;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+    padding-top: 25rem;
+    margin-top: -10rem;
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        h6 {
+            width: 30%;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: $color-grey-dark-2;
+            margin-left: 12rem;
+        }
+    }
+}
+
+.nav__list {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    color: $color-grey-dark-2;
+    &--item {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin: 3rem .5rem;
+        cursor: pointer;
+    }
+}

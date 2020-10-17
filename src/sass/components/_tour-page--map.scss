@@ -1,0 +1,100 @@
+.tour-page--map {
+    width: 100%;
+    height: 75rem;
+    transform: skewY(-7deg);
+    -webkit-transform: skewY(-7deg);
+    -moz-transform: skewY(-7deg);
+    -ms-transform: skewY(-7deg);
+    -o-transform: skewY(-7deg);
+    margin-top: -10rem;
+    margin-bottom: 9.4rem;
+    outline: none;
+     :focus {
+        outline: none;
+    }
+}
+
+.info__element--logo--map {
+    z-index: 10;
+}
+
+.marker {
+    background-image: url('../images/pin.png');
+    background-size: cover;
+    height: 4rem;
+    width: 3.2rem;
+    z-index: 10;
+    position: relative;
+    &--text {
+        width: 25rem;
+        text-align: center;
+        position: absolute;
+        top: -4rem;
+        left: -9.5rem;
+        background-color: $color-white;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        transform: skewY(7deg);
+        -webkit-transform: skewY(7deg);
+        -moz-transform: skewY(7deg);
+        -ms-transform: skewY(7deg);
+        -o-transform: skewY(7deg);
+         :checked {
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+        &__checkbox {
+            margin-right: 0.5rem;
+            opacity: 0;
+            position: absolute;
+            left: 19rem;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        span {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        &__close-button-checkbox {
+            margin-right: 0.5rem;
+            // visibility: hidden;
+            // height: 0;
+            position: absolute;
+            top: -4rem;
+            left: 11.4rem;
+            overflow: hidden;
+        }
+        &__close-button {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 0.1rem;
+        }
+         ::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 40%;
+            margin-left: -5px;
+            margin-top: -1px;
+            border-width: 1.5rem;
+            border-style: solid;
+            padding-bottom: 2rem;
+            border-color: $color-white transparent transparent transparent;
+            z-index: 10;
+        }
+        &--hidden {
+            visibility: hidden;
+            height: 0;
+        }
+    }
+}

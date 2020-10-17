@@ -1,0 +1,84 @@
+.second-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-grey-dark;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    a {
+        text-decoration: none;
+        color: $color-grey-light-2;
+    }
+    &__content--left {
+        margin-left: 3rem;
+    }
+    img {
+        height: 3rem;
+        width: 6rem;
+    }
+    &__content--left,
+    &__content--login {
+        margin: 0 1rem;
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        &:hover,
+        &:active {
+            text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 1);
+            transform: translateY(-.1rem);
+            -webkit-transform: translateY(-.1rem);
+            -moz-transform: translateY(-.1rem);
+            -ms-transform: translateY(-.1rem);
+            -o-transform: translateY(-.1rem);
+        }
+    }
+    &__content--right {
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        &-login {
+            padding-bottom: .5rem;
+            &:hover {
+                border-bottom: 1px solid $color-grey-light-2;
+            }
+        }
+        button {
+            text-decoration: none;
+            background-color: $color-grey-dark;
+            padding: 1rem 2rem;
+            border: 1px solid $color-grey-light-2;
+            border-radius: 100px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            -ms-border-radius: 100px;
+            -o-border-radius: 100px;
+            color: $color-grey-light-2;
+            text-transform: uppercase;
+            font-family: Lato;
+            font-size: 1.4rem;
+            font-weight: 300;
+            transition: transform 0.2s;
+            -webkit-transition: transform 0.2s;
+            -moz-transition: transform 0.2s;
+            -ms-transition: transform 0.2s;
+            -o-transition: transform 0.2s;
+            &:hover,
+            &:active {
+                cursor: pointer;
+                color: $color-grey-dark;
+                background-color: $color-white;
+                transform: translateY(-.5rem);
+                -webkit-transform: translateY(-.5rem);
+                -moz-transform: translateY(-.5rem);
+                -ms-transform: translateY(-.5rem);
+                -o-transform: translateY(-.5rem);
+            }
+        }
+    }
+}

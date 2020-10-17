@@ -1,0 +1,29 @@
+.reviews-cards {
+    transform: skewY(-7deg);
+    -webkit-transform: skewY(-7deg);
+    -moz-transform: skewY(-7deg);
+    -ms-transform: skewY(-7deg);
+    -o-transform: skewY(-7deg);
+    height: 60rem;
+    background-color: $color-primary;
+    margin-top: -12rem;
+    display: flex;
+    align-items: center;
+    &__content {
+        width: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-column-gap: 6rem;
+        overflow-x: auto;
+        transform: skewY(7deg);
+        -webkit-transform: skewY(7deg);
+        -moz-transform: skewY(7deg);
+        -ms-transform: skewY(7deg);
+        -o-transform: skewY(7deg);
+        &:before,
+        &:after {
+            content: '';
+            width: 2rem;
+        }
+    }
+}

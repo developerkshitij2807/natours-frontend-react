@@ -109,7 +109,7 @@ const Tour = () => {
       </div>
 
       <div className='u-center-text u-margin-top-huge'>
-        <a href='/' className='btn btn--green'>
+        <a href='/tours' className='btn btn--green'>
           Discover all tours
         </a>
       </div>

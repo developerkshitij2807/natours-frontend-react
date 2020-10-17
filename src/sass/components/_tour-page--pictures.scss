@@ -1,0 +1,14 @@
+.tour-page--pictures {
+    display: flex;
+    justify-content: flex-wrap;
+    transform: skewY(-7deg);
+    -webkit-transform: skewY(-7deg);
+    -moz-transform: skewY(-7deg);
+    -ms-transform: skewY(-7deg);
+    -o-transform: skewY(-7deg);
+    margin-top: -10rem;
+    margin-bottom: 9.4rem;
+    &__picture {
+        width: 33.3333333%;
+    }
+}

@@ -10,6 +10,7 @@
         "npm-run-all": "^4.1.5",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.3"
     },
     "scripts": {
@@ -17,7 +18,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "start": "npm-run-all --parallel devserver watch:sass",
+        "start": "set BROWSER=NONE && npm-run-all --parallel devserver watch:sass",
         "watch:sass": "node-sass src/sass/main.scss src/styles/style.css -w",
         "compile:sass": "node-sass src/sass/main.scss src/styles/style.comp.css",
         "concat:css": "concat -o src/styles/style.concat.css src/styles/icon-font.css src/styles/style.comp.css",
@@ -43,6 +44,10 @@
     "devDependencies": {
         "autoprefixer": "^10.0.0",
         "concat": "^1.0.3",
-        "postcss-cli": "^8.0.0"
+        "css-loader": "^4.3.0",
+        "mapbox-gl": "^1.12.0",
+        "postcss-cli": "^8.0.0",
+        "react-mapbox-gl": "^4.8.6",
+        "style-loader": "^2.0.0"
     }
 }

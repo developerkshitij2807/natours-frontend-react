@@ -1,0 +1,80 @@
+.page-about {
+    display: flex;
+    justify-content: space-between;
+    h2 {
+        font-size: 2.5rem;
+        width: 45rem;
+        text-transform: uppercase;
+    }
+    &--left {
+        background-color: $color-grey-light-1;
+        margin-top: -15rem;
+        padding-left: 15rem;
+        // padding: 10rem;
+        padding-top: 20rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-transform: uppercase;
+        padding-bottom: 20rem;
+        &__content {
+            ul {
+                list-style: none;
+            }
+        }
+        &__items-list {
+            display: flex;
+            h3 {
+                margin-right: 2rem;
+            }
+            h4 {
+                font-size: 1.25rem;
+                font-weight: 300;
+            }
+        }
+    }
+    &--right {
+        background-color: $color-grey-light-2;
+        margin-top: -15rem;
+        padding: 10rem;
+        padding-top: 20rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20rem;
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.items--logo {
+    fill: $color-primary;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 2rem;
+}
+
+.tour-guides {
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    &__more--left {
+        display: flex;
+        justify-content: flex-start;
+    }
+    img {
+        height: 2rem;
+        width: 2rem;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+    }
+    h4 {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+}

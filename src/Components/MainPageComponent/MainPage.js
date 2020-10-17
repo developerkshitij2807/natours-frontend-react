@@ -9,9 +9,10 @@ import Section from './SectionComponent';
 import Stories from './StoriesComponent';
 import Tour from './TourComponents';
 
-const MainComponent = () => {
+const MainPage = () => {
   return (
     <div className='natours'>
+      <title>Natours || Exciting Tours for adventures people</title>
       <Navigation />
       <Header />
       <About />
@@ -25,4 +26,4 @@ const MainComponent = () => {
   );
 };
 
-export default MainComponent;
+export default MainPage;
