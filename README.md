@@ -1,68 +1,252 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
+This is a frontend project developed for an tour booking company developed using React and advanced CSS technologies like sass, flexbox, grid and animations.
 
-## Available Scripts
+# TABLE OF CONTENTS
+- [Project Overview](#pitdecors)
+- [TABLE OF CONTENTS](#table-of-contents)
+- [TECHNOLOGIES USED](#technologies)
+- [THE THREE PILLARS TO WRITE GOOD HTML AND CSS](#the-three-pillars-to-write-good-html-and-css)
+- [HOW CSS WORKS: A LOOK BEHIND THE SCENES](#how-css-works-a-look-behind-the-scenes)
+- [HOW CSS VALUES ARE PARSED](#how-css-values-are-parsed)
+- [THE VISUAL FORMATTING MODEL](#the-visual-formatting-model)
+- [THE BOX MODEL](#the-box-model)
+  - [The box model: heights and widths](#the-box-model-heights-and-widths)
+  - [Box types: inline, block-level and inline-block](#box-types-inline-block-level-and-inline-block)
+    - [Block-level boxes](#block-level-boxes)
+    - [Inline-boxes](#inline-boxes)
+    - [Inline-block boxes](#inline-block-boxes)
+  - [Positioning schemes: normal flow, absolute positioning, and floats](#positioning-schemes-normal-flow-absolute-positioning-and-floats)
+    - [Normal flow](#normal-flow)
+    - [Floats](#floats)
+    - [Absolute positioning](#absolute-positioning)
+- [BEM](#bem)
+- [SASS Architechture](#sass-architecture)
 
-In the project directory, you can run:
+# Technologies
+  * React
+  * SCSS
+  * Flexbox
+  * Grid
+  * Animations
+  * Media Quries
 
-### `yarn start`
+# THE THREE PILLARS TO WRITE GOOD HTML AND CSS
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Responsive design**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* Fluid layouts
+* Media queries
+* Responsive images
+* Correct units
+* Desktop-first vs mobile-first
 
-### `yarn test`
+**Maintainable and scalable code**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Clean
+* Easy-to-understand
+* Growth
+* Reusable
+* How to organize files
+* How to name classes
+* How to structure HTML
 
-### `yarn build`
+**Web performance**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Less HTTP requests
+* Less code
+* Compress code
+* Use a CSS preprocessor
+* Less images
+* Compress images
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# HOW CSS WORKS: A LOOK BEHIND THE SCENES
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**What happens to CSS when a webpage is loaded?**
 
-### `yarn eject`
+Load HTML => Parse HTML => The browser builds the `Document Object Model (DOM)` (where the entire decoded HTML code is stored).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Parse HTML => Load CSS => Parse CSS => `CSS Object Model (CSSOM)`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Parse CSS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Resolve conflicting CSS declarations (cascade)
+* Process final CSS values
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**CASCADE**
 
-## Learn More
+It is the process of combining different stylesheets and resolving conflicts between different CSS rules and declarations when more than one rule applies to a certain element. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`IMPORTANCE` **>** `SPECIFICITY` **>** `SOURCE ORDER`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Firstly, the cascade starts by giving the conflicting declarations different importances based on where they are declared, so based on their source.
 
-### Code Splitting
+**Importance**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+1. User `!important` declarations (*most important declarations*)
+2. Author `!important` declarations
+3. Author declarations
+4. User declarations
+5. Default browser declarations
 
-### Analyzing the Bundle Size
+**Specificity** (SAME IMPORTANCE)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+1. Inline styles
+2. IDs
+3. Classes, pseudo-classes, attribute
+4. Elements, pseudo-elements
 
-### Making a Progressive Web App
+**Source order** (SAME SPECIFICITY)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+The last declaration in the code will override all the other declarations and will be applied.
 
-### Advanced Configuration
+**Points to remember:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+* CSS declarations marked with `!important` have the highest priority.
+* Only use `!important` as a last resource. It is better to use correct specificities - **more maintainable code**!
+* Inline styles always have priority over styles in external stylesheets. (You should NOT use inline styles)
+* A selector that contains **1** ID is more specific than one with **1000** classes.
+* A selector that contains **1** class is more specific than one with **1000** elements.
+* The universal selector `*` has no specificity value.
+* Rely more on **specificity** than on the **order** of selectors. 
+* Rely on order when using 3rd-party stylesheets - always put your author stylesheet last.
 
-### Deployment
+# HOW CSS VALUES ARE PARSED
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+* Each property has an initial value, used if nothing is declared (and if there is no inheritance).
+* Browsers specify a `root font-size` for each page (usually 16px).
+* Percentages and relative values are always converted to pixels. 
+* Percentages are measured relative to their parent's `font-size`, if used to specify `font-size`.
+* Percentages are measured relative to their parent's `width`, if used to specify lengths. 
+* `em` are measured relative to their **parent** `font-size`, if used to specify `font-size`.
+* `em` are measured relative to their **current** `font-size`, if used to specify `lengths`.
+* `rem` are always measured relative to the **document's root** `font-size`.
+* `vh` and `vw` are simply percentage measures of the viewport's `height` and `width`.
 
-### `yarn build` fails to minify
+* Inheritance passes the values for some specific properties from parents to children => **more maintainable code**.
+* Properties related to text are inherited: `font-family`, `font-size`, `color`, etc.
+* The computed value of a property is what gets inherited, **not** the declared value.
+* Inheritance of property only works if no one declares a value for that property. 
+* The `inherit` keyword forces inheritance on a certain property.
+* The `initial` keyword resets a property to its initial value.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# THE VISUAL FORMATTING MODEL
+
+*"An algorithm that calculates boxes and determines the layout of these boxes, for each element in the render tree, in order to determine the final layout of the page."*
+
+* **Dimension of the boxes**: the box model;
+* **Box type**: inline, block and inline-block;
+* **Positioning scheme**: floats and positioning;
+* **Stacking contexts**;
+* Other elements in the render tree;
+* Viewport size, dimensions of images, etc.;
+
+# THE BOX MODEL
+
+One of the most fundamental parts of CSS.
+
+The box model is one of the factors that define how elements are displayed on a webpage and how are they sized,
+
+According to the box model, every element on a webpage can be seen as a rectangle box. 
+
+And each box can have a width, height, padding, margins and a border. 
+
+* **Content**: text, images, etc.
+* **Padding**: transparent area around the content, inside the box;
+* **Border**: goes around the padding and the content;
+* **Margin**: space between boxes;
+
+## The box model: heights and widths
+
+**total width**: right border + right padding + specified width + left padding + left border
+
+**total height**: top border + top padding + specified height + bottom padding + bottom border
+
+If we use the `border-sizing: border-box`, then the **total width** and **total height** becomes:
+
+**total width**: specified width
+
+**specified height**: specified height
+
+## Box types: inline, block-level and inline-block
+
+### Block-level boxes
+
+* Elements are formatted visually as blocks
+* 100% of parent's width
+* Vertically, one after another
+* Box-model applies as showed
+
+`display: block`
+
+### Inline-boxes
+
+* Content is distributed in lines
+* Occupies only content's space
+* No line-breaks
+* No heights and widths
+* Paddings and margins only horizontal (left and right)
+
+`display: inline`
+
+### Inline-block boxes
+
+* A mix of block and line
+* Occupies only content's space
+* No line-breaks
+* Box-model applies as showed
+
+`display: inline-block`
+
+## Positioning schemes: normal flow, absolute positioning, and floats
+
+### Normal flow
+
+* Default positioning scheme
+* **NOT** floated
+* **NOT** absolutely positioned
+* Elements are laid out according to their source order
+
+```
+Default
+position: relative
+```
+
+### Floats
+
+* **Element is removed from the normal flow**
+* Text and inline elements will wrap around the floated element
+* The container will not adjust its height to the element
+
+```
+float: left
+float: right
+```
+
+### Absolute positioning
+
+* **Element is removed from the normal flow**
+* No impact on surrounding content or elements
+* We use `top`, `bottom`, `left` and `right` to offset the element from its relatively positioned container.
+
+```
+position: absolute
+position: fixed
+```
+
+# BEM
+
+* It stands for **B**lock **E**lement **M**odifier 
+* **BLOCK**: standalone components should be meaningful on their own
+* **ELEMENT**: part of a block that has no standalone meaning
+* **MODIFIER**: a different version of a block or an element
+
+
+# SASS-Architecture
+  * One popular and effectively modular way to structure Sass projects is the 7-1 pattern. They include abstracts, vendors, base, layout, contains, components, pages and themes.
+  * abstracts contains no actual styles, just Sass mechanisms that help define styles in other directories (sometimes called "helpers"). This includes things like global       variables, functions, and mixins. Each of these categories should be placed in their own appropriately-named partial file, as seen above.
+  * vendors contains any third-party stylesheets a project uses. For instance, if we wanted to use Bootstrap alongside our own custom Sass in a project, we'd download the Bootstrap stylesheet and place it here.
+  * base contains boilerplate used throughout an entire si te. This includes project-wide typography styles, and stylesheets that universally reset or normalize default CSS.
+  * layout contains styles for different aspects of the site's structural layout (think of areas like nav bars, headers, footers, etc.)
+  * components are like "mini" layouts. Styles for small, reusable pieces of the site should reside here (think buttons, forms, profile pictures, etc.)
+  * pages is where page-specific styles reside. For instance, if a project contained several style rules that are only ever used on the "Contact Us" page, they'd live here in a _contact.scss file, as seen above.
+  * themes is used whenever a site has multiple themes. For instance, the example project above includes both admin and default themes. We can therefore assume this example site is styled entirely differently for logged-in admins. Perhaps to better present and accommodate the additional features an Admin has. Some websites also offer a "night mode", where the background of the site is darker with lighter-colored text for easier reading in low-light environments. An option like this would be represented in its own theme file too.
