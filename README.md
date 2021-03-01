@@ -21,6 +21,7 @@ This is a frontend project developed for an tour booking company developed using
     - [Absolute positioning](#absolute-positioning)
 - [BEM](#bem)
 - [SASS Architechture](#sass-architecture)
+- [Media Queries](#media-queries)
 
 # Technologies
   * React
@@ -28,7 +29,7 @@ This is a frontend project developed for an tour booking company developed using
   * Flexbox
   * Grid
   * Animations
-  * Media Quries
+  * Media Queries
 
 # THE THREE PILLARS TO WRITE GOOD HTML AND CSS
 
@@ -250,3 +251,19 @@ position: fixed
   * components are like "mini" layouts. Styles for small, reusable pieces of the site should reside here (think buttons, forms, profile pictures, etc.)
   * pages is where page-specific styles reside. For instance, if a project contained several style rules that are only ever used on the "Contact Us" page, they'd live here in a _contact.scss file, as seen above.
   * themes is used whenever a site has multiple themes. For instance, the example project above includes both admin and default themes. We can therefore assume this example site is styled entirely differently for logged-in admins. Perhaps to better present and accommodate the additional features an Admin has. Some websites also offer a "night mode", where the background of the site is darker with lighter-colored text for easier reading in low-light environments. An option like this would be represented in its own theme file too.
+
+
+# Media-Queries
+  The @media rule is used in media queries to apply different styles for different media types/devices.
+
+  Media queries can be used to check many things, such as:
+
+  width and height of the viewport
+  width and height of the device
+  orientation (is the tablet/phone in landscape or portrait mode?)
+  resolution
+  Using media queries are a popular technique for delivering a tailored style sheet (responsive web design) to desktops, laptops, tablets, and mobile phones.
+
+  You can also use media queries to specify that certain styles are only for printed documents or for screen readers (mediatype: print, screen, or speech).
+
+  In addition to media types, there are also media features. Media features provide more specific details to media queries, by allowing to test for a specific feature of the user agent or display device. For example, you can apply styles to only those screens that are greater, or smaller, than a certain width.
